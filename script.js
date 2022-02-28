@@ -12,6 +12,7 @@ function check(){
 
     var dTime=new Date(doj);
     var currDate=new Date();
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     d=true;
 
     if(currDate.getFullYear()-dTime.getFullYear()<10){
@@ -48,7 +49,11 @@ function check(){
         alert("Invalid Mobile Number");
         temp=0;
     }
-    if(!document.getElementById('availed').checked){
+    if(!mail.match(validRegex)){
+        temp=0;
+        alert("Invalid mail Id");
+    }
+    if(!document.getElementById('notavailed').checked){
         temp=0;
         alert('Not qualified for scholarship');
     }
