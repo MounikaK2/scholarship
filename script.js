@@ -13,8 +13,30 @@ function check(){
     var dTime=new Date(doj);
     var currDate=new Date();
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var phoneno = /^\d{10}$/;
+    var nameVal=/^[a-zA-Z]+$/;
     d=true;
 
+    if (!ename.match(nameVal)){
+        d=false;
+        alert("Invalid name")
+    }
+    if (!dept.match(nameVal)){
+        d=false;
+        alert("Invalid department name")
+    }
+    if (!design.match(nameVal)){
+        d=false;
+        alert("Invalid designation name")
+    }
+    if (!cname.match(nameVal)){
+        d=false;
+        alert("Invalid child name")
+    }
+    if (!colname.match(nameVal)){
+        d=false;
+        alert("Invalid collage name")
+    }
     if(currDate.getFullYear()-dTime.getFullYear()<10){
         d=false;
     }
@@ -44,7 +66,7 @@ function check(){
     if(mark>'100' || mark<'0'){
         alert('Mark should be between 0 and 100')
     }
-    if(num.length != 10)
+    if(num.length != 10||!num.match(phoneno))
     {
         alert("Invalid Mobile Number");
         temp=0;
